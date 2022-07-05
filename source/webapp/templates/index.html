@@ -13,7 +13,7 @@
 <body>
 {% csrf_token token %}
 <li class="nav">
-    <a class="nav-link" href="#">Добавление продукта</a>
+    <a class="nav-link" href="{% url "create_product" %}">Добавление продукта</a>
 </li>
 {% for product in products %}
     <div class="col-12 col-md-6 col-lg-4">
