@@ -13,8 +13,10 @@
 {% csrf_token token %}
 <li class="nav">
     <a class="nav-link" href="{% url "index" %}">Главная страница</a>
+    <a class="nav-link" href="{% url "update_product" product.pk %}">Редактирование</a>
+    <a class="nav-link" href="{% url "delete_product" product.pk %}">Удаление товара</a>
 </li>
-}
+
 <div class="col-12 col-md-6 col-lg-4">
     <div class="card">
         <div class="card-body">
