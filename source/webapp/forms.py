@@ -1,11 +1,15 @@
 from django import forms
 
-CATEGORY_CHOICES = [('other', 'Разное'), ('Milk', 'Молоко'), ('Juce', 'Сок'), ('Bread', 'Хлеб')]
+from webapp.models import Product
 
 
-class ProductForm(forms.Form):
-    name = forms.CharField(max_length=100, label="Name")
-    description = forms.CharField(max_length=2000, label="Description")
-    category = forms.ChoiceField(choices = CATEGORY_CHOICES)
-    remains = forms.IntegerField(label="Remains")
-    price = forms.DecimalField(max_digits=7, decimal_places=2, label="Price")
+class ProductForm(forms.ModelForm):
+    class Meta:
+        model = Product
+        fields = ["name", "description", "category", "remains", "price"]
+
+
+class UserProductForm(forms.ModelForm):
+    class Meta:
+        model = Product
+        fields = ["name", "description", "category", "remains", "price"]

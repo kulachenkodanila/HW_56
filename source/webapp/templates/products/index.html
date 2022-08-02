@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+{% block nav %}
+    <li class="nav-item">
+        <a class="nav-link" href="{% url "create_product" %}">Добавление продукта</a>
+    </li>
+{% endblock %}
+
+{% block content %}
+    <h1>All products</h1>
+    <div class="row">
+        {% for product in products %}
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <a href="{% url "product_view" product.pk %}">{{ product.name }}</a>
+                        <p class="card-title">Цена: {{ product.price }}</p>
+                        <p class="card-title">Категория: {{ product.category }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+            {% if is_paginated %}
+                {% include "partial/pagination.html" %}
+            {% endif %}
+    </div>
+{% endblock %}

@@ -53,5 +53,16 @@
         "remains": 5,
         "price": "555.00"
     }
+},
+{
+    "model": "webapp.product",
+    "pk": 7,
+    "fields": {
+        "name": "Dan1111",
+        "description": "ghfgfgfjgfj",
+        "category": "other",
+        "remains": 3,
+        "price": "44.00"
+    }
 }
 ]
